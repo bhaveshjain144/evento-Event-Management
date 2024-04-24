@@ -8,7 +8,7 @@ class EventListCreateAPIView(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
-        serializer.save(organizer=self.request.user)
+        serializer.save(organizer=self.request.user.username)
 
 class EventRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Event.objects.all()
@@ -16,4 +16,4 @@ class EventRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_update(self, serializer):
-        serializer.save(organizer=self.request.user)
+        serializer.save(organizer=self.request.user.username)
