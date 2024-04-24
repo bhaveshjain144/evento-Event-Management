@@ -23,6 +23,5 @@
         "src": "/api/(.*)",
         "dest": "evento/wsgi.py"
         }
-    ],
-    "outputDirectory": "ui/staticfiles"
+    ]
 }  
